@@ -7,7 +7,7 @@ public class PowerStone implements IStone{
   }
 
   @Override
-  public void deactivate() {
+  public void deactivate(Person person) {
 
   }
 }
