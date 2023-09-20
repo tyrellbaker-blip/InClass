@@ -10,8 +10,9 @@ PowerStone powerStone;
   @BeforeEach
   void setUp() {
   testPerson = new Person("Roberta the tester");
-  powerStone = new PowerStone();
+  PowerStone.getPowerStone();
   }
+
 
   @AfterEach
   void tearDown() {
@@ -31,5 +32,11 @@ PowerStone powerStone;
 
   @Test
   void deactivate() {
+    double currentPower = testPerson.getPower();
+    assertEquals(currentPower, testPerson.getPower());
+    currentPower = currentPower / PowerStone.MULTIPLIER;
+    powerStone.deactivate(testPerson);
+    assertEquals(currentPower, testPerson.getPower());
+
   }
 }
